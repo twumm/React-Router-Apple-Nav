@@ -30,7 +30,17 @@ const StyledSubLinkItemA = styled.a`
     line-height: 1.09.91;
     font-weight: 400;
     letter-spacing: -.008em;
+    text-align: center;
   }
+`;
+
+const StyledImageFigure = styled.figure`
+  width: 52px;
+  height: 54px;
+  background-size: 52px 54px;
+  background-repeat: no-repeat;
+  background-image: url(${props => props.imageUrl});
+  margin: 0 auto 6px;
 `;
 
 export default function SubNav({ subLinks }) {
@@ -44,7 +54,8 @@ export default function SubNav({ subLinks }) {
                 key={subLink.id}
               >
                 <StyledSubLinkItemA>
-                  <img alt={subLink.title} src={subLink.imageUrl} width={20} height={54} />
+                  <StyledImageFigure imageUrl={subLink.imageUrl} />
+                  {/* <div className="image-icon"><img alt={subLink.title} src={subLink.imageUrl} width={20} height={54} /></div> */}
                   <div className="title">{subLink.title}</div>
                 </StyledSubLinkItemA>
               </StyledSubLinkItem>

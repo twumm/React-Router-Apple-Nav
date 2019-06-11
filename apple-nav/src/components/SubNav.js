@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledSubNavSection = styled.section`
-  background-color: rgba(242,242,242,0.7);
+  background-color: ${props => (props.linkTitle === 'TV' ? '#141414' : 'rgba(242,242,242,0.7)')};
+  color: ${props => (props.linkTitle === 'TV' ? 'white' : 'black')};
 `;
 
 const StyledSubLinkNav = styled.nav`
@@ -43,9 +44,9 @@ const StyledImageFigure = styled.figure`
   margin: 0 auto 6px;
 `;
 
-export default function SubNav({ subLinks }) {
+export default function SubNav({ subLinks, linkTitle }) {
   return (
-    <StyledSubNavSection>
+    <StyledSubNavSection linkTitle={linkTitle}>
       <StyledSubLinkNav>
         {
           subLinks
@@ -55,7 +56,6 @@ export default function SubNav({ subLinks }) {
               >
                 <StyledSubLinkItemA>
                   <StyledImageFigure imageUrl={subLink.imageUrl} />
-                  {/* <div className="image-icon"><img alt={subLink.title} src={subLink.imageUrl} width={20} height={54} /></div> */}
                   <div className="title">{subLink.title}</div>
                 </StyledSubLinkItemA>
               </StyledSubLinkItem>

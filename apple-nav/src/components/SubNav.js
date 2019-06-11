@@ -1,16 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
+import  { NavLink } from 'react-router-dom'
 
 const StyledSubNavSection = styled.section`
   background-color: ${props => (props.linkTitle === 'TV' ? '#141414' : 'rgba(242,242,242,0.7)')};
   color: ${props => (props.linkTitle === 'TV' ? 'white' : 'black')};
 `;
 
-const StyledSubLinkNav = styled.nav`
+const StyledSubLinkNav = styled(NavLink)`
   display: flex;
   align-items: center;
   justify-content: space-between;
   /* height: 60px; */
+  text-decoration: none;
+  color: inherit;
   width: 90%;
   margin: 0 auto;
 `;

@@ -23,6 +23,9 @@ const StyledCenterNavLinks = styled.div`
   display: flex;
   justify-content: space-between;
   width: 70%;
+  .active {
+    color: gray;
+  }
 `;
 
 const StyledRightNavLinks = styled.div`

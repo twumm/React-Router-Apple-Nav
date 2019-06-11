@@ -25,6 +25,7 @@ const StyledSubLinkItem = styled(NavLink)`
 `;
 
 const StyledSubLinkItemDiv = styled.div`
+
   cursor: pointer;
   .image-icon {
     text-align: center;
@@ -35,6 +36,17 @@ const StyledSubLinkItemDiv = styled.div`
     font-weight: 400;
     letter-spacing: -.008em;
     text-align: center;
+    /* padding-bottom: 10px; */
+  }
+  .new-product {
+    font-size: 9px;
+    padding: 0;
+    margin: 0;
+  }
+  .text-section {
+    display: flex;
+    line-height: 2;
+    flex-direction: column;
   }
 `;
 
@@ -60,7 +72,14 @@ export default function SubNav({ subLinks, linkTitle, match }) {
               >
                 <StyledSubLinkItemDiv>
                   <StyledImageFigure imageUrl={subLink.imageUrl} />
-                  <div className="title">{subLink.title}</div>
+                  <div className="text-section">
+                    <span className="title">{subLink.title}</span>
+                    {/* {
+                      subLink.new
+                        ? <span className="new-product">New</span>
+                        : null
+                    } */}
+                  </div>
                 </StyledSubLinkItemDiv>
               </StyledSubLinkItem>
             ))

@@ -1,27 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
-import  { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 
 const StyledSubNavSection = styled.section`
   background-color: ${props => (props.linkTitle === 'TV' ? '#141414' : 'rgba(242,242,242,0.7)')};
   color: ${props => (props.linkTitle === 'TV' ? 'white' : 'black')};
 `;
 
-const StyledSubLinkNav = styled(NavLink)`
+const StyledSubLinkNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
   /* height: 60px; */
-  text-decoration: none;
-  color: inherit;
   width: 90%;
   margin: 0 auto;
 `;
 
-const StyledSubLinkItem = styled.div`
+const StyledSubLinkItem = styled(NavLink)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
+  color: inherit;
 `;
 
 const StyledSubLinkItemA = styled.a`
@@ -47,7 +47,7 @@ const StyledImageFigure = styled.figure`
   margin: 0 auto 6px;
 `;
 
-export default function SubNav({ subLinks, linkTitle }) {
+export default function SubNav({ subLinks, linkTitle, match }) {
   return (
     <StyledSubNavSection linkTitle={linkTitle}>
       <StyledSubLinkNav>
@@ -56,6 +56,7 @@ export default function SubNav({ subLinks, linkTitle }) {
             ? subLinks.map(subLink => (
               <StyledSubLinkItem
                 key={subLink.id}
+                to={`${match.path}/${subLink.id}`}
               >
                 <StyledSubLinkItemA>
                   <StyledImageFigure imageUrl={subLink.imageUrl} />

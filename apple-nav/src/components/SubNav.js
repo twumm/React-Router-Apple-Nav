@@ -24,7 +24,7 @@ const StyledSubLinkItem = styled(NavLink)`
   color: inherit;
 `;
 
-const StyledSubLinkItemA = styled.a`
+const StyledSubLinkItemDiv = styled.div`
   cursor: pointer;
   .image-icon {
     text-align: center;
@@ -58,10 +58,10 @@ export default function SubNav({ subLinks, linkTitle, match }) {
                 key={subLink.id}
                 to={`${match.path}/${subLink.id}`}
               >
-                <StyledSubLinkItemA>
+                <StyledSubLinkItemDiv>
                   <StyledImageFigure imageUrl={subLink.imageUrl} />
                   <div className="title">{subLink.title}</div>
-                </StyledSubLinkItemA>
+                </StyledSubLinkItemDiv>
               </StyledSubLinkItem>
             ))
             : null

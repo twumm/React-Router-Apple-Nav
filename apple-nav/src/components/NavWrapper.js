@@ -74,6 +74,7 @@ export default function NavWrapper() {
               <SubNav
                 {...props}
                 subLinks={navLink.subLink}
+                linkTitle={navLink.title}
               />
             )}
           />

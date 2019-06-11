@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import navLinksData from '../navLinkData';
 
 const StyledNavWrapper = styled.div`
@@ -29,6 +30,11 @@ const StyledRightNavLinks = styled.div`
   width: 16%;
 `;
 
+const StyledNavLinkMain = styled(NavLink)`
+  color: white;
+  text-decoration: none;
+`;
+
 export default function NavWrapper() {
   return (
     <StyledNavWrapper>
@@ -39,9 +45,13 @@ export default function NavWrapper() {
       <StyledCenterNavLinks>
         {
           navLinksData.map(navLink => (
-            <div key={navLink.id}>
+            <StyledNavLinkMain
+              key={navLink.id}
+              to={navLink.title.toLowerCase()}
+              activeClassName="active"
+            >
               {navLink.title}
-            </div>
+            </StyledNavLinkMain>
           ))
         }
       </StyledCenterNavLinks>

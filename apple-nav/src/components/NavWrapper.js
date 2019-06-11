@@ -29,6 +29,7 @@ const StyledRightNavLinks = styled.div`
   display: flex;
   justify-content: space-around;
   width: 16%;
+  align-items: center;
 `;
 
 const StyledNavLinkMain = styled(NavLink)`
@@ -41,7 +42,7 @@ export default function NavWrapper() {
     <div>
       <StyledNavWrapper>
         <StyledLeftNavLinks>
-          <img alt="Logo" />
+          <img alt="Logo" src="https://www.apple.com/ac/globalnav/4/en_US/images/globalnav/apple/image_large.svg" />
         </StyledLeftNavLinks>
 
         <StyledCenterNavLinks>
@@ -59,12 +60,8 @@ export default function NavWrapper() {
         </StyledCenterNavLinks>
 
         <StyledRightNavLinks>
-          <div>
-            <img alt="Search" />
-          </div>
-          <div>
-            <img alt="Shop" />
-          </div>
+          <img alt="Search" src="https://www.apple.com/ac/globalnav/4/en_US/images/globalnav/search/image_large.svg" />
+          <img alt="Shop" src="https://www.apple.com/ac/globalnav/4/en_US/images/globalnav/bag/image_large.svg" />
         </StyledRightNavLinks>
       </StyledNavWrapper>
 
